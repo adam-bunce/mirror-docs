@@ -53,7 +53,7 @@ const App = {
       App.$.stepsContainerList.classList.remove("dn");
     }
 
-    App.$.listViewImage.src = `/mirror-docs/${App.$.currentListView}-view.svg`;
+    App.$.listViewImage.src = `/${App.$.currentListView}-view.svg`;
   },
   toggleHamburgerMenu() {
     // add dropdown menu visibility
