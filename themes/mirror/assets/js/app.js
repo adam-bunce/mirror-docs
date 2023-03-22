@@ -22,10 +22,10 @@ const App = {
     // update images in button
     if (App.$.currentListView === "grid") {
       App.$.currentListView = "list";
-      App.$.listViewImage.src = "/list-view.svg";
+      App.$.listViewImage.src = "mirror-docs/list-view.svg";
     } else {
       App.$.currentListView = "grid";
-      App.$.listViewImage.src = "/grid-view.svg";
+      App.$.listViewImage.src = "mirror-docs/grid-view.svg";
     }
     // toggle visibility
     App.$.stepsContainerGrid.classList.toggle("dn");
