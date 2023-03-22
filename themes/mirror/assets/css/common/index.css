@@ -1,0 +1,67 @@
+/* feels hacky ikik */
+.index-hero {
+    background-color: var(--primary);
+    color: var(--white);
+    width: 100%;
+}
+
+.hero-title {
+    width: var(--main-width);
+    margin: auto;
+    padding-top: 30px;
+}
+
+.section-content {
+    padding-top: 50px;
+    width: var(--main-width);
+    margin: auto;
+}
+
+.index-container {
+    width: var(--main-width);
+    margin: auto;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 65px;
+}
+
+.index-container a {
+    color: var(--primary);
+}
+
+.index-container a:hover {
+   text-underline: var(--black);
+    text-decoration-line: underline;
+}
+
+.index-container ul {
+    padding-left: 1.5em;
+}
+
+.image {
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.chart {
+    width: 100%;
+}
+
+.w40 {
+    width: 40%;
+}
+.w30 {
+    width: 30%;
+}
+
+@media (max-width: 1024px) {
+    .index-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .index-container img {
+        width: 100%;
+    }
+}

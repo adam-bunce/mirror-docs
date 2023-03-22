@@ -1,0 +1,38 @@
+{{ define "main" }}
+    <div class="article-content">
+        <aside class="side-nav">
+            <div class="toc">
+                <b>Overview</b>
+                {{ .TableOfContents }}
+            </div>
+        </aside>
+        <section class="content">
+            <hgroup>
+                <h1>{{ .Weight }}. {{ .Title | strings.FirstUpper }}</h1>
+
+                <p class="article-description">
+                    {{ if .Description }}
+                        {{ .Description }}
+                    {{ else }}
+                        ...
+                    {{ end }}
+                </p>
+
+                <p>
+                    <span class="words article-info-blurb">{{ .WordCount }} words </span>
+                    <span class="reading-time article-info-blurb">
+                {{ if (gt .ReadingTime 1 )}}
+                    {{ .ReadingTime }} minutes
+                {{else}}
+                    {{ .ReadingTime }} minute
+                {{ end }}
+            </span>
+                </p>
+            </hgroup>
+            <hr>
+           {{ .Content }}
+            {{ partial "nextprev.html" . }}
+        </section>
+    </div>
+{{end}}
+

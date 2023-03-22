@@ -1,0 +1,29 @@
+{{ $theme_vars := (resources.Get "css/core/theme-vars.css") }}
+{{ $reset := (resources.Get "css/core/reset.css") }}
+{{ $media := (resources.Get "css/core/media.css") }}
+{{- $common := (resources.Match "css/common/*.css") | resources.Concat "assets/css/common.css" }}
+
+{{- /* order is important */ -}}
+{{ $stylesheet := (slice $theme_vars $reset $common  $media ) | resources.Concat "assets/css/stylesheet.css" | resources.Minify | fingerprint }}
+<link crossorigin="anonymous" rel="preload stylesheet" type="text/css" href="{{ $stylesheet.RelPermalink }}"  as="style" />
+
+<title>
+    {{ if not .IsHome }}{{ .Title | title }} | {{ end }}{{ .Site.Title }}
+</title>
+
+{{ with .Site.Params.favicon }}
+<link rel="icon" href="{{ . }}" />
+{{ end }}
+
+<meta
+        name="description"
+        content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}"
+/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta charset="utf-8" />
+
+{{- $script := (resources.Match "js/*.js") | resources.Concat "assets/js/script.js" }}
+<script defer crossorigin="anonymous" src="{{ $script.RelPermalink }}" ></script>
+
+<link rel="icon" href="/mirrorLogo.svg" sizes="any" type="image/svg+xml">

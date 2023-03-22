@@ -1,0 +1,22 @@
+/* Desktop first design oops */
+
+:root {
+    --footer-height: 60px;
+    --header-height: 60px;
+    --header-width: 85%;
+    --main-width: 75%;
+
+    --primary: #3273dc;
+    --primary-dark: #2c65c5;
+    --secondary-light: #DBDBDB;
+    --secondary-medium: #f5f5f5ba;
+    --secondary-dark: #B5B5B5;
+    --black: #2E3440;
+    --white: white;
+    --grey: grey;
+
+    --green-bg: #ebfffc;
+    --green: #00947e;
+    --blue: #2160c4;
+    --blue-bg: #eef3fc;
+}

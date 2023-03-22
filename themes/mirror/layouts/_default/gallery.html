@@ -1,0 +1,38 @@
+{{ define "main" }}
+    {{ $stepImageUrls := slice}}
+    {{ $folders := slice}}
+
+    {{ range readDir "/static/images/steps"}}
+        {{ $folders = append $folders (slice (printf "/images/steps/%s" .Name))}}
+    {{ end }}
+
+    {{ range $index, $folder := $folders }}
+        {{ range readDir (printf "/static/%s" $folder) }}
+            {{ $stepImageUrls = append $stepImageUrls (slice (printf "%s/%s" $folder .Name))}}
+        {{ end }}
+    {{ end }}
+
+
+    <hgroup>
+        <h2 class="list-title"> {{ .Section | strings.FirstUpper }}</h2>
+        <p class="article-description">{{ .Description }}</p>
+    </hgroup>
+  <hr>
+  <div class="gallery-grid">
+      {{ range $index, $element := ( shuffle $stepImageUrls) }}
+            {{ $imagePageUrl := replace (index (findRE `\/images\/([A-Za-z._-]*\/[A-Za-z._-]*)\/` $element) 0) "/images" "" }}
+            {{ if lt $index 15}}
+                <a href="{{ $imagePageUrl }}">
+                    <img src="{{ $element }}" alt="gallery image"/>
+                </a>
+            {{else}}
+                <a href="{{ $imagePageUrl }}">
+                    <img loading="lazy" src="{{ $element }}" alt="gallery image" />
+                </a>
+            {{end}}
+      {{ end }}
+  </div>
+{{ end }}
+{{/*  this is horrible, i wanted to just grab the images but i put them in the wrong folder,
+had the been in the content folder i could of use .Resources.ByType "image",
+but i realized too late and i don't want to format markdown anymore :). */}}

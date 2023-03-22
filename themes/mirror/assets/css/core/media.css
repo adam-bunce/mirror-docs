@@ -1,0 +1,91 @@
+
+@media only screen and (max-width: 1500px) {
+    .steps-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Tablets + CRT monitors' ig */
+@media screen and (max-width: 1024px) {
+    :root {
+        --main-width: 90%;
+        --header-width: 100%;
+    }
+    .steps-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .side-nav {
+        width: auto;
+    }
+
+    .content {
+        width: auto;
+    }
+    .article-content {
+        flex-direction: column;
+    }
+
+
+    .content :is(h1,h2,h3,h4,h5,h6) { /* now includes first of type */
+        padding-top: 1em;
+    }
+}
+
+/* Phones */
+@media screen and (max-width: 800px) {
+    /*:root {*/
+    /*    --main-width: 90%;*
+    /*    --header-width: 100%;*/
+    /*}*/
+    .article-nav-box-length {
+        width: 100%;
+    }
+    .next-prev-container {
+        flex-direction: column;
+    }
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* nav hamburger mode*/
+    .nav-container {
+        justify-content: space-between;
+    }
+    .navbar-right-anchors {
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: var(--header-height);
+
+        /* TODO if screen size change goes through breakpoint
+            this gets triggered and you see nav roll up
+        */
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform .25s ease;
+    }
+    .navbar-right-anchors a:not(:last-child) {
+        border-bottom: solid var(--white) 1px;
+    }
+    .navbar-right-anchors a:first-child {
+        border-top: solid var(--white) 1px;
+    }
+
+    /* hamburger button opened styling */
+    .hamburger-toggle-button-open {
+        background-color: var(--white);
+        outline: 1px solid var(--primary-dark);
+        cursor: pointer;
+    }
+    .hamburger-toggle-button-open span {
+        background-color: var(--primary-dark);
+    }
+    .hamburger-toggle-button {
+        display: flex;
+    }
+    .active {
+        transform: scaleY(1);
+    }
+
+    /* end nav hamburger mode*/
+}

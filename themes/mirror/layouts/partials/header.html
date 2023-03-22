@@ -1,0 +1,24 @@
+<header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="/" class="navbar-item">
+                    <img src="/mirrorLogo.svg"/>
+                    &nbsp;
+                     {{- .Site.Title -}}
+                </a>
+
+                <button id="hamburger-toggle-button" class="hamburger-toggle-button">
+                    <span id="1"></span>
+                    <span id="2"></span>
+                    <span id="3"></span>
+                </button>
+                <div id="nav-links" class="navbar-right-anchors">
+                {{ range .Site.Sections }}
+                    <a href="{{ .RelPermalink }}" class="navbar-item">
+                        {{- .Section | strings.FirstUpper -}}
+                    </a>
+                {{ end }}
+                </div>
+            </div>
+        </nav>
+    </header>

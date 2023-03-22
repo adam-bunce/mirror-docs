@@ -1,0 +1,92 @@
+.list-title {
+    /* padding doesn't effect body height calculation but margin does?? i
+        does box-sizing not exit or what
+    */
+    padding-top: 24px;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    grid-auto-rows: 1fr; /* should force equal vertical height */
+    margin-bottom: 30px;
+}
+
+.steps-container li {
+    list-style: none;
+}
+
+a p:last-of-type {
+    margin-top: auto;
+}
+
+.dfc {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+hgroup p {
+   padding: 0;
+}
+
+
+/* layout button toggle styling */
+#list-view-toggle-button {
+    border: none;
+    border-radius: 4px;
+}
+
+#list-view-toggle-button:hover {
+   background-color: var(--secondary-dark);
+    cursor: pointer;
+}
+
+#list-view-toggle-button img {
+    width: 3.5em;
+}
+
+.header-container {
+   display: flex;
+   justify-content: space-between;
+}
+
+.steps-container-list-view {
+    /*grid-template-columns: repeat(20, 1fr);*/
+    display: block;
+}
+
+.steps-list-item {
+    list-style: none;
+}
+
+/* list view styles */
+
+#steps-container-list {
+    margin-bottom: 30px;
+}
+
+#steps-container-list a {
+    height: 100%;
+    display: block;
+    padding: 10px;
+}
+
+#steps-container-list li:first-of-type {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+#steps-container-list li:last-of-type {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+#steps-container-list li:nth-of-type(odd) {
+    background-color: var(--secondary-medium);
+}
+
+#steps-container-list li:hover {
+    background-color: var(--secondary-dark);
+}

@@ -1,0 +1,35 @@
+{{ if or .Next .Prev -}}
+<div class="next-prev-container">
+  {{ if .Next}} {{ with .Next}}
+  <a
+    class="drop-shadow-box article-nav-box-length justify-start"
+    href="{{ .RelPermalink }}"
+  >
+    <div class="next-prev-article-info-container">
+      {{ partial "svgIcons/arrow_back.html" }}
+      <div class="text-align-right">
+        <span class="small-grey-text">Previous Section</span>
+        <div class="bigger-text">{{ .Title }}</div>
+      </div>
+    </div>
+  </a>
+  {{ end }} {{else}}
+  <div class="article-nav-box-length justify-start"></div>
+  {{ end }} {{ if .Prev }} {{ with .Prev}}
+  <a
+    class="drop-shadow-box article-nav-box-length justify-end"
+    href="{{ .RelPermalink }}"
+  >
+    <div class="next-prev-article-info-container">
+      <div class="text-align-left">
+        <span class="small-grey-text">Next Section</span>
+        <div class="bigger-text">{{ .Title }}</div>
+      </div>
+      {{ partial "svgIcons/arrow_forwards.html" }}
+    </div>
+  </a>
+  {{ end }} {{else}}
+  <div class="article-nav-box-length justify-end"></div>
+  {{ end }}
+</div>
+{{ end -}}

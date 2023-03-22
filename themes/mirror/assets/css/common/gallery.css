@@ -1,0 +1,32 @@
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.gallery-grid img {
+    border-radius: 4px;
+    /* specify minimums for lazy loading */
+    min-height: 200px;
+    min-width: 200px;
+    object-fit: contain;
+}
+
+/* weird media breakpoints b/c min-sizing for lazy loads*/
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-grid img {
+        /* specify minimums for lazy loading */
+        min-height: 100px;
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 800px) {
+   .gallery-grid {
+       grid-template-columns: repeat(2, 1fr);
+   }
+}

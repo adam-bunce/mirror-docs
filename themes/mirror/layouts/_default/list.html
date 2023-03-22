@@ -1,0 +1,56 @@
+{{ define "main" }}
+    <div class="header-container">
+        <h2 class="list-title"> {{ .Section | strings.FirstUpper }}</h2>
+
+        <button id="list-view-toggle-button">
+            <img id="list-view-image" src="/grid-view.svg"/>
+        </button>
+    </div>
+    <hr>
+
+    <!-- grid container -->
+    <!-- putting li as child instead of li is bad -->
+    <ul id="steps-container-grid" class="steps-container">
+    {{ range $index, $page := .Pages }}
+        <a class="drop-shadow-box" href="{{ .RelPermalink }}">
+            <li class="dfc">
+                <p><b>{{ add $index 1 }}. </b>{{ $page.Title | strings.FirstUpper }}</p>
+                <p class="small-grey-text">
+                    {{ if .Description }}
+                        {{ .Description }}
+                    {{ else }}
+                        ...
+                    {{ end }}
+                </p>
+
+                <p class="align-self-end">
+                    <span class="reading-time article-info-blurb">
+                        {{ if (gt $page.ReadingTime 1 )}}
+                            {{ $page.ReadingTime }} minutes
+                        {{else}}
+                            {{ $page.ReadingTime }} minute
+                        {{ end }}
+                    </span>
+                    <span class="words article-info-blurb">
+                        {{ $page.WordCount }} words
+                    </span>
+                </p>
+            </li>
+
+        </a>
+    {{ end }}
+        <!--    end of grid container-->
+    </ul>
+
+
+<!--    could do table here instead of list-->
+    <ul id="steps-container-list" class="dn">
+    {{ range $index, $page := .Pages }}
+        <li class="steps-list-item">
+            <a href="{{ .RelPermalink }}">
+                <div><b>{{ add $index 1 }}. </b>{{ $page.Title | strings.FirstUpper }}</div>
+            </a>
+        </li>
+    {{ end }}
+    </ul>
+{{ end }}

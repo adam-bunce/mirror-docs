@@ -1,0 +1,6 @@
+.main {
+    width: var(--main-width);
+    margin: auto;
+    padding-top: 35px;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height))
+}

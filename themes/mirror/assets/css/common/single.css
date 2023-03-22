@@ -1,0 +1,48 @@
+.article-description {
+    color: var(--grey);
+    margin-bottom: 5px;
+}
+
+.article-content {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.toc {
+    position: sticky;
+    top: 15px;
+}
+
+.toc a {
+    color: var(--primary);
+}
+
+.toc a:hover {
+    color: var(--black)
+}
+
+.toc > nav {
+    padding-top: 1em;
+}
+
+.toc ul {
+    padding-left: 2em;
+}
+
+.side-nav {
+    width: 25%;
+}
+
+.content {
+    width: 75%;
+}
+
+.content p a {
+    color: var(--primary)
+}
+
+/* WHAT IS THIS LMAFOOO */
+.content :is(h1,h2,h3,h4,h5,h6):not(:first-of-type){
+    padding-top: 1em;
+}

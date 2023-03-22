@@ -1,0 +1,9 @@
+{{ define "main" }}
+    {{ .Content }}
+        {{ range .Site.Pages }}
+        <a href="{{ .RelPermalink }}">{{ .Title}}</a>
+        {{end}}
+{{ end }}
+
+
+text here for steps idnexy only
