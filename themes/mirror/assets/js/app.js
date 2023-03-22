@@ -79,6 +79,4 @@ try {
   App.init();
   App.initCookies();
 } catch (e) {
-  // TODO make this scripy only active on list pages
-  console.log("not a script page!");
 }
