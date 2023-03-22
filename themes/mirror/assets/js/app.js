@@ -53,7 +53,7 @@ const App = {
       App.$.stepsContainerList.classList.remove("dn");
     }
 
-    App.$.listViewImage.src = `/${App.$.currentListView}-view.svg`;
+    App.$.listViewImage.src = `/mirror-docs/${App.$.currentListView}-view.svg`;
   },
   toggleHamburgerMenu() {
     // add dropdown menu visibility
@@ -79,7 +79,6 @@ try {
   App.init();
   App.initCookies();
 } catch (e) {
-  // something failed, probably because an element isn't on that page
   // TODO make this scripy only active on list pages
   console.log("not a script page!");
 }
