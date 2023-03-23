@@ -12,4 +12,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
+}
+
+.next-prev-article-info-container svg {
+    min-width: 2em;
+    align-self: center;
+}
+
+.next-prev-article-info-container div {
+    align-self: start;
 }

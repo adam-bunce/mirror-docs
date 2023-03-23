@@ -25,9 +25,20 @@
         flex-direction: column;
     }
 
-
     .content :is(h1,h2,h3,h4,h5,h6) { /* now includes first of type */
         padding-top: 1em;
+    }
+    /* index page styling */
+    .index-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .index-container img {
+        width: 100%;
+    }
+    .chart {
+        margin-top: 30px;
     }
 }
 
