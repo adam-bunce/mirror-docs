@@ -66,7 +66,7 @@ On my Mirror I installed only a single pair of shroud blocks, as I do not intend
 {{< /step >}}
 
 {{< step >}}
-We opted to put filler on the battens, squeeze as much out to get a good seal, then put weights on the decks overnight to lock it in. 
+We put filler on the battens, and squeezed out excess to get a good seal, then put weights on the decks overnight to lock it in. 
 ![](/images/steps/fixing-decks/side-decks.JPG)
 {{< /step >}}
 

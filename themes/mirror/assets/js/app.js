@@ -22,10 +22,10 @@ const App = {
     // update images in button
     if (App.$.currentListView === "grid") {
       App.$.currentListView = "list";
-      App.$.listViewImage.src = "/mirror-docs/list-view.svg";
+      App.$.listViewImage.src = "/list-view.svg";
     } else {
       App.$.currentListView = "grid";
-      App.$.listViewImage.src = "/mirror-docs/grid-view.svg";
+      App.$.listViewImage.src = "/grid-view.svg";
     }
     // toggle visibility
     App.$.stepsContainerGrid.classList.toggle("dn");
@@ -53,7 +53,7 @@ const App = {
       App.$.stepsContainerList.classList.remove("dn");
     }
 
-    App.$.listViewImage.src = `/mirror-docs/${App.$.currentListView}-view.svg`;
+    App.$.listViewImage.src = `/${App.$.currentListView}-view.svg`;
   },
   toggleHamburgerMenu() {
     // add dropdown menu visibility
