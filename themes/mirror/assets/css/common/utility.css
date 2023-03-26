@@ -52,10 +52,16 @@
     border-radius: 4px;
 }
 
-.oxh {
-    overflow-x: hidden;
-}
 
 .dn {
     display: none;
 }
+
+.w30 {
+    width: 30%;
+}
+
+.w40 {
+    width: 40%;
+}
+

@@ -16,14 +16,13 @@
     width: 50%;
     object-fit: contain;
     border-radius: 5px;
+    flex-shrink: 0; /* firefox needs this for some reason */
 }
-
 
 @media screen and (max-width: 800px) {
     .step {
         flex-direction: column;
         gap: 5px;
-        /*display: block;*/
     }
     .step img {
         width: 100%;

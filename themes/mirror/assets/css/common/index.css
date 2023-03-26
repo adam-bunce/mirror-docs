@@ -17,10 +17,10 @@
 }
 
 .index-container {
+    display: flex;
     width: var(--main-width);
     margin: auto;
     padding-bottom: 30px;
-    display: flex;
     justify-content: space-between;
     gap: 65px;
 }
@@ -41,15 +41,9 @@
 .image {
     border-radius: 6px;
     object-fit: cover;
+    flex-shrink: 0; /* firefox needs this for some reason */
 }
 
 .chart {
     width: 100%;
-}
-
-.w40 {
-    width: 40%;
-}
-.w30 {
-    width: 30%;
 }
